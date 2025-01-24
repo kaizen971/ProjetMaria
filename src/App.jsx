@@ -7,6 +7,7 @@ import ExplosionRose from './assets/ExplosionRose.png'
 import Carrousel1 from './assets/Carrousel1.png'
 import Carrousel2 from './assets/Carrousel2.png'
 import Carrousel3 from './assets/Carrousel3.png'
+import Carrousel from './carrousel'
 
 
 function App() {
@@ -54,7 +55,7 @@ function App() {
 
   return (
     <div className="app">
-      <nav className="navbar">
+       <nav className="navbar">
         <div className="logo">
           <img src={Maria} alt="Maria" className="logo-img" />
         </div>
@@ -65,7 +66,7 @@ function App() {
           <li><a href="#projets">Mes projets</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
+      </nav> 
 
       <main>
         {/* Le reste de votre contenu ici */}
@@ -80,7 +81,7 @@ function App() {
               </h2>
             </div>
           </div>
-        </section>
+        </section> 
         {/* Mettre une section avec deux div centrées et identiques et cote à cote*/}
         <section className="section-container" id="apropos">
           <div className="section-content-about">
@@ -106,39 +107,14 @@ function App() {
             </div>
           </div>
           <div className="section-content-image">
-            {/* Mettre une image de fond avec l'image ExplosionRose.png*/}
             <img src={PhotoProfile} alt="PhotoProfile" className="photo-profile-rounded" />
           </div>
-        </section>
+        </section> 
         {/* Section carrousel avec les images de mes projets*/}
         
         <section className="section-carrousel" id="parcours">
-        <h2 className="section-title">Mon Parcours</h2>
-
-          <div className="carrousel-container">
-            <div className="carousel">
-              <div className="carousel-inner">
-                <input className="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden defaultChecked/>
-                <div className="carousel-item">
-                  <img src={Carrousel1} alt="Carrousel1"/>
-                </div>
-                <input className="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden/>
-                <div className="carousel-item">
-                  <img src={Carrousel2} alt="Carrousel2"/>
-                </div>
-                <input className="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden/>
-                <div className="carousel-item">
-                  <img src={Carrousel3} alt="Carrousel3"/>
-                </div>
-                <label htmlFor="carousel-3" className="carousel-control prev control-1">‹</label>
-                <label htmlFor="carousel-2" className="carousel-control next control-1">›</label>
-                <label htmlFor="carousel-1" className="carousel-control prev control-2">‹</label>
-                <label htmlFor="carousel-3" className="carousel-control next control-2">›</label>
-                <label htmlFor="carousel-2" className="carousel-control prev control-3">‹</label>
-                <label htmlFor="carousel-1" className="carousel-control next control-3">›</label>
-              </div>
-            </div>
-          </div>
+        {/* <h2 className="section-title">Mon Parcours</h2> */}
+        <Carrousel />
         </section>
       </main>
     </div>
