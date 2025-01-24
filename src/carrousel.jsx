@@ -1,5 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faChevronLeft, faGraduationCap, faBriefcase, faChartLine, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,7 +10,7 @@ const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div style={styles.nextArrow} onClick={onClick}>
-      <i className="fa-solid fa-chevron-right"></i>
+      <FontAwesomeIcon icon={faChevronRight} />
     </div>
   );
 };
@@ -17,7 +19,7 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div style={styles.prevArrow} onClick={onClick}>
-      <i className="fa-solid fa-chevron-left"></i>
+      <FontAwesomeIcon icon={faChevronLeft} />
     </div>
   );
 };
@@ -26,38 +28,45 @@ const Carousel = () => {
   const parcours = [
     {
       date: "2023",
-      title: "MBA Expert Marketing Digital",
-      description: "Formation en alternance chez Com O Carré - Infiniment Plus. Spécialisation en stratégie digitale et gestion de projets marketing.",
-      icon: "fa-solid fa-graduation-cap"
+      title: "Master 2 Marketing Digital",
+      description: "EDC Paris Business School. Formation en e-marketing et stratégie web. Apprentissage du SEO et des bases de données.",
+      icon: faGraduationCap
     },
     {
-      date: "2022",
-      title: "Chef de Projet Digital",
-      description: "Gestion de campagnes publicitaires et développement de stratégies marketing pour divers clients.",
-      icon: "fa-solid fa-briefcase"
+      date: "2021-2022",
+      title: "Cheffe de projet en alternance",
+      description: "SEO Digital Paris. Déploiement du plan de communication interne et externe. Coordination des newsletters et événements internes.",
+      icon: faBriefcase
     },
     {
-      date: "2021",
-      title: "Bachelor Marketing Digital",
-      description: "Formation en marketing digital avec focus sur l'analyse de données et la création de contenu.",
-      icon: "fa-solid fa-chart-line"
+      date: "2019",
+      title: "Master 2 Marketing Opérationnel",
+      description: "ISMA Cameroun. Formation spécialisée en marketing et communication.",
+      icon: faChartLine
     },
     {
-      date: "2020",
-      title: "Stage Communication Digitale",
-      description: "Premier pas dans le monde professionnel avec la gestion de réseaux sociaux et création de contenu.",
-      icon: "fa-solid fa-laptop-code"
+      date: "2017-2019",
+      title: "Assistante commerciale",
+      description: "Orange, Paris. Gestion de la relation client, traitement des appels et suivi des comptes clients.",
+      icon: faLaptopCode
+    },
+    {
+      date: "2016",
+      title: "BTS Commerce International",
+      description: "ISMA Cameroun. Formation en commerce international.",
+      icon: faGraduationCap
     }
+
   ];
 
   const settings = {
     dots: true,
-    infinite: true,
-    speed: 500,
+    infinite: false,
+    speed: 200,
     slidesToShow: 2,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     responsive: [
       {
@@ -70,7 +79,6 @@ const Carousel = () => {
     ],
     customPaging: (i) => (
       <div style={styles.dot}>
-        <i className={parcours[i].icon}></i>
       </div>
     ),
     nextArrow: <NextArrow />,
@@ -90,7 +98,7 @@ const Carousel = () => {
               </div>
               <div style={styles.content}>
                 <div style={styles.iconWrapper}>
-                  <i className={`${item.icon}`} style={styles.icon}></i>
+                  <FontAwesomeIcon icon={item.icon} style={styles.icon} />
                 </div>
                 <h3 style={styles.title}>{item.title}</h3>
                 <p style={styles.description}>{item.description}</p>
@@ -117,7 +125,7 @@ const styles = {
     borderRadius: "15px",
     boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
     overflow: "hidden",
-    border: "1px solid #a9dff8",
+    border: "3px solid #a9dff8",
     position: "relative",
     minHeight: "350px",
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
@@ -125,6 +133,8 @@ const styles = {
       transform: "translateY(-5px)",
       boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
     },
+    width: "80%",
+    height: "250px",
   },
   dateBox: {
     backgroundColor: "#f0b9cb",
@@ -151,10 +161,11 @@ const styles = {
     "&:hover": {
       transform: "rotate(360deg)",
     },
+    backgroundColor: "#a9dff8",
   },
   icon: {
     fontSize: "2.2em",
-    color: "#f0b9cb",
+      color: "white",
   },
   title: {
     color: "#333",
@@ -168,8 +179,8 @@ const styles = {
     fontSize: "1.1em",
   },
   dot: {
-    width: "35px",
-    height: "35px",
+    width: "10px",
+    height: "10px",
     borderRadius: "50%",
     backgroundColor: "#f0b9cb",
     display: "flex",
@@ -183,6 +194,7 @@ const styles = {
       transform: "scale(1.1)",
       backgroundColor: "#e29cb2",
     },
+    
   },
   date: {
     fontSize: "1.3em",

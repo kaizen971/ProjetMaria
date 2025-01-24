@@ -2,12 +2,15 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Maria from './assets/Maria.png'
 import profile from './assets/profile.jpg'
+import RoseBackgroundContact from './assets/RoseBackgroundContact.jpg'
 import PhotoProfile from './assets/PhotoProfile.png'
 import ExplosionRose from './assets/ExplosionRose.png'
 import Carrousel1 from './assets/Carrousel1.png'
 import Carrousel2 from './assets/Carrousel2.png'
 import Carrousel3 from './assets/Carrousel3.png'
 import Carrousel from './carrousel'
+import LinkedInIcon from './assets/linkedin.png'
+
 
 
 function App() {
@@ -114,7 +117,86 @@ function App() {
         
         <section className="section-carrousel" id="parcours">
         {/* <h2 className="section-title">Mon Parcours</h2> */}
+        <h2 className="section-title">Mon parcours</h2>
         <Carrousel />
+        </section>
+        <section className="section-carrousel" id="competences">
+          <h2 className="section-title">Mes compétences</h2>
+          <p className="competences-intro">
+            Découvrez l'ensemble de mes compétences acquises durant mes études, mon stage et mon alternance.
+          </p>
+          
+          <div className="competences-grid">
+            <div className="competence-block">
+              <h3 className="competence-block-title">Webmarketing & Communication</h3>
+              <ul className="competence-list">
+                <li>Analyse de données avec <span className="highlight">Google Analytics</span></li>
+                <li>Création de campagnes de notoriété : <span className="highlight">Google ADS et Facebook ADS</span></li>
+                <li>Rédaction pour le web et référencement naturel (<span className="highlight">SEO</span>)</li>
+                <li>Outils marketing : <span className="highlight">PESTEL, SWOT, Personas</span></li>
+                <li>Création et envoi d'emailing (<span className="highlight">Brevo</span>)</li>
+                <li>Veille média et <span className="highlight">Community management</span></li>
+                <li>Stratégie de communication & social média</li>
+              </ul>
+            </div>
+
+            <div className="competence-block">
+              <h3 className="competence-block-title">Graphisme & Vidéo</h3>
+              <ul className="competence-list">
+                <li>Maîtrise des logiciels spécifiques à la conception de visuels : Suite Adobe (<span className="highlight">Photoshop, Illustrator</span> et <span className="highlight">Indesign</span>), <span className="highlight">Canva</span> et <span className="highlight">Bannersnack</span></li>
+                <li>Utilisation d'<span className="highlight">Adobe XD</span> et <span className="highlight">Figma</span> pour la création de maquettes</li>
+                <li>Utilisation des logiciels de la Suite Adobe pour les montages vidéos et motion design (<span className="highlight">Premier Pro, Audition</span> et <span className="highlight">After effect</span>)</li>
+              </ul>
+            </div>
+
+            <div className="competence-block">
+              <h3 className="competence-block-title">Développement Web</h3>
+              <ul className="competence-list">
+                <li>Création de sites internet via le <span className="highlight">CMS WordPress</span> avec Elementor et Elementor Pro</li>
+                <li>Utilisation de <span className="highlight">PrestaShop</span> pour la réalisation d'un site e-commerce</li>
+                <li>Base en <span className="highlight">HTML, CSS, Javascript</span> et <span className="highlight">PHP</span></li>
+              </ul>
+            </div>
+
+            <div className="competence-block">
+              <h3 className="competence-block-title">Gestion de projet</h3>
+              <ul className="competence-list">
+                <li><span className="highlight">Diagramme de Gantt</span> pour le suivi des tâches lors de projets de groupe</li>
+                <li><span className="highlight">Méthode MoSCoW</span> pour définir les priorités d'un projet</li>
+                <li>Utilisation de <span className="highlight">Trello</span> et <span className="highlight">Monday</span> pour les projets d'équipe</li>
+                <li>Utilisation d'<span className="highlight">Agorapulse</span> pour planifier et gérer les posts en équipe</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section className="section-carrousel" id="contact">
+          <img src={RoseBackgroundContact} alt="RoseBackgroundContact" className="rose-background-contact" />
+            <h2 className="section-title">Me contacter</h2>
+            <p >N'hésitez pas à me contacter via ce formulaire ou sur mon profil LinkedIn</p>
+            
+            <div className="contact-content">
+              {/* <div className="social-links">
+                <a href="https://linkedin.com/in/votre-profil" target="_blank" rel="noopener noreferrer">
+                  <img src={LinkedInIcon} alt="LinkedIn" className="linkedin-icon" />
+                </a>
+              </div> */}
+              
+              <form className="contact-form">
+                <div className="form-group">
+                    <input type="text" placeholder="Nom *" required />
+                </div>
+                <div className="form-group">
+                    <input type="text" placeholder="Prénom *" required />
+                  </div>
+                <div className="form-group">
+                  <input type="email" placeholder="E-mail *" required />
+                </div>
+                <div className="form-group">
+                  <textarea placeholder="Message *" required></textarea>
+                </div>
+                <button type="submit" className="submit-button">Envoyer</button>
+              </form>
+            </div>
         </section>
       </main>
     </div>
